@@ -1,0 +1,194 @@
+@charset "UTF-8";
+
+*{
+	color : white;
+}
+
+.header{
+	background-color: #2C2C2C;
+	padding-bottom: 30px;
+}
+
+body{
+	background-color: #141414;
+}
+/* 페이지 내용이 들어갈 전체 화면 */
+.category_wrap{
+	margin: 0 auto;
+}
+/*  실질적인 내용이 들어갈 부분 */
+.content_container{
+	background-color: #2C2C2C;
+	border-radius: 1%; 
+}
+
+/*h3 부분*/
+.category_title{
+	font-family: LINESeedKR-Bd;
+	border-bottom: #eeeeee solid 1px;
+	padding: 5px 0px;
+	font-size: calc(1.3rem + .6vw)
+}
+/*--------------------------카테고리 선택 부분[ul] s-----------------------*/
+
+.category_wrap{ 
+	padding-top : 50px; /*헤더와 본문사이 띄우기*/
+}
+
+.category_box{
+	display: flex; /*가로 정렬*/
+}
+
+.category_li ul{
+	padding-top : 30px; /*h3과 카테고리 ul 사이 띄우기*/
+	display: flex;
+	justify-content: space-between; 
+}
+
+.category_li li{
+	display: inline-block; /*가로 배치*/
+	font-weight : bold; /*폰트 두껍게*/
+	margin: 3px 10px; 
+	padding : 3px 6px;
+}
+
+.categorySelect{ /*카테고리를 선택했을 때 디자인 바꿈*/
+	color: #FF0080;
+	border-bottom: 3px #FF0080 solid;
+	padding-bottom : 5px !important;
+	font-weight: bold;
+}
+
+.search_btn{ /*카테고리명 검색 버튼 */
+	color : white;
+	border : 1px white solid;
+}
+/*--------------------------카테고리 선택 부분[ul] e-----------------------*/
+/*--------------------카테고리 선택 부분[input 입력으로] s--------------------*/
+.search_box{
+	display: flex;
+	margin : 20px 0px;
+}
+.blank_container{
+	width : 65%; /*공백 부분*/
+}
+.d-flex{
+	align-items: center; /*카테고리 검색부분의 높이를 늘리는 것이 아니라 가운데 정렬[세로]*/
+	padding-bottom: 15px;
+	width : 35%; /*가로 사이즈*/
+}
+/*부트스트랩 버튼 디자인 기본값 설정 변경*/
+.btn-outline-success{
+	--bs-btn-hover-bg : #FF0080;
+	--bs-btn-hover-border-color : #FF0080;
+}
+/*--------------------카테고리 선택 부분[input 입력으로] e--------------------*/
+/*-----------------영화 포스터와 제목, 평점, 연령가 출력하는 부분 s---------------*/
+/*영화 정보 여러개 들어가는 전체 화면*/
+.content{
+	display : flex;
+	justify-content: flex-start;
+	flex-wrap : wrap; /*꽉차면 자동 줄바꿈*/
+	/* border: 1px white solid; */
+	width : 95%;
+	margin: 0 auto;
+	min-height: 700px; /*내용물에 따라 높이가 바뀌는 것이 좋지 않아서, 높이 최소값을 지정*/
+}
+
+/*영화 요소 한개 묶음*/
+.movie_item{
+	height: 60%;
+	border-radius : 20px;
+	background-color :#2C2C2C;
+	width : 27%;
+	margin: 1% 3%;
+	padding : 0.5%;
+}
+
+.movie_item img{ /*영화 포스터 이미지*/
+	width : 95%;
+	border-radius : 20px;
+}
+/*이미지를 담고 있는 박스 구역*/
+.movie_img{
+	position:relative; /*상위 요소*/
+	text-align: center;
+}
+
+/*영화 관람가 */
+.movie_age{
+	/*span안의 text 가로세로 가운데*/
+	justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size : 18px;
+	width : 41px;
+	height : 41px;
+	position: absolute; /*하위 요소*/
+	right : 0; /*오른쪽 윗부분에 띄우기 위해*/
+	top: 0;
+	background-color: green;
+	color : white;
+	border-radius: 100%;
+}
+
+/*영화명으로 검색한 경우 카테고리명을 알 수 없기 때문에 그것을 위한 카테고리명 띄우기*/
+.movie_category{
+	position: absolute; /*하위 요소*/
+	right : left; /*오른쪽 윗부분에 띄우기 위해*/
+	top: left;
+	color : white;
+	background-color: #FF0080 !important;
+	padding : 1px;
+}
+/*평점이 들어가는 전체 칸*/
+.movie_grade{
+	width : 95%;
+	background-color :#2C2C2C;
+	position: relative; /*별점을 넣을 상위 요소에 relative*/
+	margin: 0px 15px;
+	font-size: 26px !important;
+	color : #c7c7c7;
+}
+
+/*평점에 따라 별의 색을 채울 span*/
+.star_grade{
+	width : 0px; /*평점이 없을 경우는 가로가 0이어야함. -> 평점에 따라 가로를 키워야하니까*/
+	position: absolute; /*하위요소인 star_grade에 absolute*/
+	/*상위 요소에 맞춰 겹쳐야하기 때문에 left, top => 0*/
+	left : 0;
+	top : 0;
+	color : #FF0080;
+	overflow: hidden; /*넘치면 숨긴다.*/
+}
+/*숫자로된 평점*/
+.number_grade{
+	position: absolute;
+	right :0; /*숫자로된 평점은 오른쪽에 붙인다.*/
+	top : 0;
+}
+/* 영화 개봉일 이 들어가는 구역 */
+.movie_ReleaseBox{
+	vertical-align:middle; /*가운데 정렬*/
+	text-align: center;
+	font-size: 21px;
+	font-weight: bold;
+	padding: 1%;
+}
+/*-----------------영화 포스터와 제목, 평점, 연령가 출력하는 부분 e---------------*/
+
+
+@media( max-width : 1050px){ /*1000px아래로 떨어지면[최대 가로사이즈가 1000px 아래면]*/
+	.movie_item{
+		width : 45% !important; 
+		margin: 2% !important;
+	}
+}
+
+
+@media(max-width : 500px){
+	.movie_item{
+		width : 90% !important;
+		margin: 2% !important;
+	}
+}

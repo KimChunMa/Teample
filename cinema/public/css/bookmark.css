@@ -1,0 +1,81 @@
+@charset "UTF-8";
+/*----------------------------전체 요소 start---------------------------*/
+
+/*즐겨찾기 페이지 전체*/
+.bookmark_wrap{
+	margin: 0 auto; /*가운데 정렬*/
+	padding-top: 80px;
+}
+
+body{
+	color : white;
+	margin: 0px;
+	padding : 0px;
+}
+a{
+	text-decoration: none; /*밑줄제거*/
+	color :white !important;
+}
+/*--------------------------헤더 start ---------------------------------*/
+.header{
+	width : 100%;
+	background-color: #2C2C2C;
+	padding-bottom: 30px;
+}
+/*----------------------------헤더 end ---------------------------------*/
+/*--------------------------본문 start ---------------------------------*/
+.bookmark_wrap{
+	background-color: #141414;
+}
+/*h3 스타일 지정*/
+.bookmark_title{
+	font-family: LINESeedKR-Bd; /*cinema에서 font 가져옴[글자 통일을 위해]*/
+	border-bottom: #eeeeee solid 1px;
+	padding: 5px 0px;
+	font-size :calc(1.3rem + .6vw);
+}
+td{
+	cursor :pointer;
+}
+/* table 요소 style 지정 start */
+.t_dMovieTitle, .t_dMovieCategory{
+	--bs-table-hover-color : #FF0080 ; /* 해당 행에 마우스를 올렸을 때 폰트 색을 red계열로 바꿈 */
+	font-size: 21px;
+	vertical-align: middle;/*  세로 가운데 정렬 */
+}
+
+.t_dMovieBookMark{
+	--bs-table-hover-color : white; /* 별은 해당 행마우스 올렸을 때 색을 바꾸지 않기 위해 white로 지정 */
+	font-size: 50px;
+	vertical-align: middle; /* 세로 가운데 정렬 */
+	align-items : center;
+	padding-bottom: 28px !important;
+}
+
+.t_dMovieBookMark div{
+	width : 60px;
+	height : 60px;
+	line-height : 60px;
+	text-align : center;
+	font-family: KorailRoundGothicBold;
+	background-color:  rgb(255, 40, 40);
+	color : white;
+	padding-top : 5px;
+} 
+
+.movie_imgInfo{
+	position: relative;
+	text-align: center;
+}
+.movie_imgInfo img{
+	width : 95%;
+}
+
+.movie_age{
+	position : absolute;
+	left: 2.8%;
+	top: 0;
+	padding : 7px;
+}
+/*table 요소 style 지정 end*/
+/*----------------------------본문 end ---------------------------------*/
